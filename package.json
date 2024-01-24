@@ -1,5 +1,6 @@
 {
   "name": "nest-mantine-admin",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "build": "turbo build",
