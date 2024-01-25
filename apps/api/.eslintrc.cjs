@@ -6,5 +6,5 @@ module.exports = {
     tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
-  extends: ['@repo/config-eslint/nest.js'],
+  extends: ['./node_modules/@repo/config-eslint/nest.js'],
 };
