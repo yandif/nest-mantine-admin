@@ -10,8 +10,8 @@
     "commit": "git-cz && git push"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@repo/config-eslint": "workspace:*",
+    "@repo/config-typescript": "workspace:*",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog-chinese": "^2.3.0",
     "prettier": "^3.2.4",
