@@ -1,5 +1,4 @@
 {
   "compilerOptions": { "outDir": "./dist", "declaration": true, "baseUrl": "./" },
-  "exclude": ["node_modules", "test", "dist", "**/*spec.ts"],
   "extends": "@repo/config-typescript/nest.json",
 }
