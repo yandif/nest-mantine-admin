@@ -9,10 +9,14 @@
   "scripts": {
     "dev": "vite --port=3000",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "npm run lint:eslint && npm run lint:stylelint",
+    "lint:eslint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:stylelint": "stylelint '**/*.css' --cache",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mantine/core": "^7.5.0",
+    "@mantine/hooks": "^7.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.3"
@@ -20,11 +24,22 @@
   "devDependencies": {
     "@repo/config-eslint": "workspace:*",
     "@repo/config-typescript": "workspace:*",
+    "@testing-library/dom": "^9.3.4",
+    "@testing-library/jest-dom": "^6.4.0",
+    "@testing-library/react": "^14.2.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/node": "^20.3.1",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^8.56.0",
+    "postcss": "^8.4.33",
+    "postcss-preset-mantine": "^1.12.3",
+    "postcss-simple-vars": "^7.0.1",
+    "stylelint": "^16.2.0",
+    "stylelint-config-standard-scss": "^13.0.0",
     "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "vitest": "^0.34.6"
   }
 }
