@@ -25,6 +25,7 @@
   "dependencies": {
     "@mantine/core": "^7.5.0",
     "@mantine/hooks": "^7.5.0",
+    "@storybook/preview-api": "^7.6.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.3"
