@@ -23,5 +23,6 @@ module.exports = {
     ], // 控制多个空行
     'simple-import-sort/imports': 'error', // 导入排序规则
     'simple-import-sort/exports': 'error', // 导出排序规则
+    'no-plusplus': 'off',
   },
 };

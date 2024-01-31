@@ -16,9 +16,10 @@
     "lint:stylelint": "stylelint '**/*.css' --cache",
     "prettier": "prettier --check \"**/*.{ts,tsx}\"",
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
+    "vitest-preview:watch": "npm-run-all -p vitest-preview vitest:watch",
+    "vitest-preview": "vitest-preview",
     "vitest": "vitest run",
     "vitest:watch": "vitest",
-    "vitest-preview": "vitest-preview",
     "test": "npm run typecheck && npm run prettier && npm run lint && npm run vitest && npm run build",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build"
@@ -26,6 +27,8 @@
   "dependencies": {
     "@mantine/core": "^7.5.0",
     "@mantine/hooks": "^7.5.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "npm-run-all": "^4.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.3",

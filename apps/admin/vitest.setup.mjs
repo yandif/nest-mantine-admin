@@ -1,5 +1,6 @@
 import '@mantine/core/styles.css';
 import '@testing-library/jest-dom/vitest';
+
 import { vi } from 'vitest';
 
 const { getComputedStyle } = window;
