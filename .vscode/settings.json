@@ -3,6 +3,7 @@
     "source.fixAll.eslint": "explicit",
     "source.fixAll.stylelint": "explicit"
   },
+  "stylelint.validate": ["css", "less", "postcss", "scss", "sass"],
   "eslint.workingDirectories": [
     {
       "mode": "auto"
