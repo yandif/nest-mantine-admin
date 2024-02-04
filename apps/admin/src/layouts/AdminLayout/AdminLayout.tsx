@@ -1,35 +1,41 @@
-import { AppShell, Burger, Group, ScrollArea, Skeleton, Tabs } from '@mantine/core';
+import { AppShell, Burger, Group, InputBase, ScrollArea, Skeleton } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import { IconSettings } from '@tabler/icons-react';
 import { Outlet } from 'react-router-dom';
 
+import { Tabs } from '@/components/UI';
+
+import { MenuSearch } from './MenuSearch';
+
 export function AdminLayout() {
   const [opened, { toggle }] = useDisclosure(true);
 
-  const headerHeight = 60;
+  const headerHeight = 50;
   return (
     <AppShell
       header={{ height: headerHeight }}
-      navbar={{ width: 300, breakpoint: 'sm', collapsed: { desktop: !opened, mobile: !opened } }}
-      padding="md">
+      navbar={{ width: 188, breakpoint: 'sm', collapsed: { desktop: !opened, mobile: !opened } }}
+      py="md"
+      px="0">
       <AppShell.Header>
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <MantineLogo size={30} />
         </Group>
       </AppShell.Header>
-      <AppShell.Navbar p="md">
-        <AppShell.Section>Navbar header</AppShell.Section>
-        <AppShell.Section grow my="md" component={ScrollArea}>
-          60 links in a scrollable section
+      <AppShell.Navbar>
+        <AppShell.Section p="sm">
+          <MenuSearch />
+        </AppShell.Section>
+        <AppShell.Section grow px="md" component={ScrollArea}>
           {Array(60)
             .fill(0)
             .map((_, index) => (
               <Skeleton key={index} h={28} mt="sm" animate={false} />
             ))}
         </AppShell.Section>
-        <AppShell.Section>Navbar footer – always at the bottom</AppShell.Section>
+        <AppShell.Section>footer</AppShell.Section>
       </AppShell.Navbar>
       <AppShell.Main h={`calc(100vh - ${headerHeight}px)`}>
         <Tabs defaultValue="gallery">
@@ -42,6 +48,9 @@ export function AdminLayout() {
           </Tabs.List>
 
           <Tabs.Panel value="gallery">
+            <Group>
+              <InputBase></InputBase> <InputBase></InputBase>
+            </Group>
             <Outlet />
           </Tabs.Panel>
         </Tabs>
