@@ -25,6 +25,7 @@
     "storybook:build": "storybook build"
   },
   "dependencies": {
+    "@legendapp/state": "^2.1.5",
     "@mantine/core": "^7.5.0",
     "@mantine/dates": "^7.5.0",
     "@mantine/hooks": "^7.5.0",

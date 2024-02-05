@@ -1,0 +1,9 @@
+.root {
+  opacity: 1;
+}
+
+.header {
+  @mixin dark {
+    opacity: 1;
+  }
+}

@@ -1,12 +1,12 @@
 import { createBrowserRouter, RouteObject, RouterProvider } from 'react-router-dom';
 
-import { Loading, RootErrorBoundary } from '@/components/FallbackElements';
-import { AdminLayout } from '@/layouts/AdminLayout/AdminLayout';
+import { Loading, NotFound, RootErrorBoundary } from '@/components/FallbackElements';
+import { Admin } from '@/layouts/Admin/';
 import { HomePage } from '@/pages/Home.page';
 
 const a: RouteObject = {
   path: '/',
-  element: <AdminLayout />,
+  element: <Admin />,
   children: [
     {
       index: true,
@@ -25,6 +25,10 @@ const a: RouteObject = {
         }),
       element: <HomePage />,
       hydrateFallbackElement: <Loading />,
+    },
+    {
+      path: '*',
+      element: <NotFound />,
     },
   ],
   hydrateFallbackElement: <Loading />,

@@ -1,23 +1,29 @@
-import { AppShell, Burger, Group, InputBase, ScrollArea, Skeleton } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import { useSelector } from '@legendapp/state/react';
+import { AppShell, Burger, Group, ScrollArea, Skeleton } from '@mantine/core';
 import { MantineLogo } from '@mantinex/mantine-logo';
-import { IconSettings } from '@tabler/icons-react';
 import { Outlet } from 'react-router-dom';
 
-import { Tabs } from '@/components/UI';
+import { AdminStore } from '@/stores/admin';
 
+import classes from './index.module.css';
 import { MenuSearch } from './MenuSearch';
 
-export function AdminLayout() {
-  const [opened, { toggle }] = useDisclosure(true);
+export function Admin() {
+  const adminStore = useSelector(() => AdminStore.get());
+  const opened = !adminStore.collapsed.mobile;
+  const toggle = () => {
+    AdminStore.collapsed.mobile.set(opened);
+  };
 
   const headerHeight = 50;
   return (
     <AppShell
       header={{ height: headerHeight }}
-      navbar={{ width: 188, breakpoint: 'sm', collapsed: { desktop: !opened, mobile: !opened } }}
-      py="md"
-      px="0">
+      navbar={{ width: 188, breakpoint: 'sm', collapsed: adminStore.collapsed }}
+      classNames={{
+        root: classes.root,
+        header: classes.header,
+      }}>
       <AppShell.Header>
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
@@ -38,22 +44,7 @@ export function AdminLayout() {
         <AppShell.Section>footer</AppShell.Section>
       </AppShell.Navbar>
       <AppShell.Main h={`calc(100vh - ${headerHeight}px)`}>
-        <Tabs defaultValue="gallery">
-          <Tabs.List>
-            <Tabs.Tab value="gallery">Gallery</Tabs.Tab>
-            <Tabs.Tab value="messages">Messages</Tabs.Tab>
-            <Tabs.Tab value="settings" leftSection={<IconSettings />}>
-              Settings
-            </Tabs.Tab>
-          </Tabs.List>
-
-          <Tabs.Panel value="gallery">
-            <Group>
-              <InputBase></InputBase> <InputBase></InputBase>
-            </Group>
-            <Outlet />
-          </Tabs.Panel>
-        </Tabs>
+        <Outlet />
       </AppShell.Main>
     </AppShell>
   );
