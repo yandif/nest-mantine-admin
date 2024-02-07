@@ -16,8 +16,8 @@
     "@repo/config-eslint": "workspace:*",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog-chinese": "^2.3.0",
-    "prettier": "^3.2.4",
-    "turbo": "^1.11.3"
+    "prettier": "^3.2.5",
+    "turbo": "^1.12.2"
   },
   "packageManager": "pnpm@8.14.3",
   "engines": {
