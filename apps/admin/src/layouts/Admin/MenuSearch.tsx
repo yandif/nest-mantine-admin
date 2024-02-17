@@ -2,6 +2,8 @@ import { Combobox, InputBase, ScrollArea, useCombobox } from '@mantine/core';
 import { IconSearch } from '@tabler/icons-react';
 import { useState } from 'react';
 
+import { AdminStore } from '@/stores/admin';
+
 const groceries = [
   '🍎 Apples',
   '🍌 Bananas',
@@ -64,6 +66,7 @@ export function MenuSearch() {
       onOptionSubmit={(val) => {
         setValue(val);
         setSearch('');
+        AdminStore.collapsed.mobile.set(true);
         combobox.closeDropdown();
       }}>
       <Combobox.Target>

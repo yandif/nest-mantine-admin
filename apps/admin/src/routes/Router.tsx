@@ -10,20 +10,17 @@ const a: RouteObject = {
   children: [
     {
       index: true,
-      loader: () =>
-        new Promise((s) => {
-          setTimeout(() => s({ a: 123 }), 1000);
-        }),
       element: <HomePage />,
       hydrateFallbackElement: <Loading />,
     },
     {
+      path: 'a',
+      lazy: () => import('./a'),
+      hydrateFallbackElement: <Loading />,
+    },
+    {
       path: 'b',
-      loader: () =>
-        new Promise((s) => {
-          setTimeout(() => s({ a: 123 }), 1000);
-        }),
-      element: <HomePage />,
+      lazy: () => import('./a'),
       hydrateFallbackElement: <Loading />,
     },
     {
@@ -37,10 +34,10 @@ const a: RouteObject = {
 
 const router = createBrowserRouter([a], {
   future: {
-    v7_partialHydration: true,
-    v7_fetcherPersist: true,
-    v7_normalizeFormMethod: true,
-    v7_relativeSplatPath: true,
+    // v7_partialHydration: true,
+    // v7_fetcherPersist: true,
+    // v7_normalizeFormMethod: true,
+    // v7_relativeSplatPath: true,
   },
 });
 

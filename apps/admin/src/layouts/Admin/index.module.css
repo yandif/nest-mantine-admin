@@ -7,3 +7,66 @@
     opacity: 1;
   }
 }
+
+.tabList {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.tab {
+  background-color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-6));
+  opacity: 0.5;
+  white-space: nowrap;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+
+  &[data-active] {
+    background-color: light-dark(white, var(--mantine-color-dark-7));
+    opacity: 1;
+  }
+}
+
+.left {
+  width: 32px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px 6px #ddd;
+  z-index: 100;
+  background: var(--mantine-color-gray-1);
+  cursor: pointer;
+
+  @mixin dark {
+    box-shadow: 0 0 18px 6px #111;
+    background: var(--mantine-color-dark-6);
+  }
+}
+
+.right {
+  width: 32px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px 6px #ddd;
+  z-index: 100;
+  background: var(--mantine-color-gray-1);
+  cursor: pointer;
+
+  @mixin dark {
+    box-shadow: 0 0 18px 6px #111;
+    background: var(--mantine-color-dark-6);
+  }
+}
