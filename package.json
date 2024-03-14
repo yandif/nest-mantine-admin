@@ -17,7 +17,7 @@
     "commitizen": "^4.3.0",
     "cz-conventional-changelog-chinese": "^2.3.0",
     "prettier": "^3.2.5",
-    "turbo": "^1.12.2"
+    "turbo": "^1.12.4"
   },
   "packageManager": "pnpm@8.14.3",
   "engines": {

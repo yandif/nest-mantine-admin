@@ -2,6 +2,7 @@ import { createBrowserRouter, RouteObject, RouterProvider } from 'react-router-d
 
 import { Loading, NotFound, RootErrorBoundary } from '@/components/FallbackElements';
 import { Admin } from '@/layouts/Admin/';
+import KeepAliveDemo from '@/layouts/Admin/KeepAliveReact';
 import { HomePage } from '@/pages/Home.page';
 
 const a: RouteObject = {
@@ -10,7 +11,7 @@ const a: RouteObject = {
   children: [
     {
       index: true,
-      element: <HomePage />,
+      element: <KeepAliveDemo />,
       hydrateFallbackElement: <Loading />,
     },
     {

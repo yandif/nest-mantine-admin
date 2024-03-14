@@ -13,7 +13,7 @@ export function Nav() {
         onClick={() => {
           AdminStore.collapsed.mobile.set(true);
         }}
-        label="  首页"
+        label="首页"
         leftSection={<IconGauge size="1rem" stroke={1.5} />}
         childrenOffset={28}
       />

@@ -151,7 +151,6 @@ export function Admin() {
                   <Group p="8px" align="center" wrap="nowrap">
                     <IconHome size={16} stroke={2} />
                     {key}
-                    手工开盘神奇
                     {key !== '/' && (
                       <CloseButton
                         component="div"
